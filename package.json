@@ -1,6 +1,6 @@
 {
   "name": "@skyrocks/dsh-turn-timing",
-  "version": "0.1.8",
+  "version": "0.1.9",
   "description": "DeepSeek Harness plugin: 每轮对话结束时直接显示耗时去向（模型 / 编码 / 构建 / 测试 / 清理）",
   "license": "MIT",
   "type": "module",

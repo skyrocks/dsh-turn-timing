@@ -25,11 +25,17 @@ window.__ModuleLoader__.load({
       ["清理", "还原", /(git (checkout|restore|stash|reset)\b|docker (stop|rm|kill)\b|(npm|pnpm|yarn) run clean\b|make clean\b)/i],
       ["清理", "临时文件", /\brm\s+(-[a-zA-Z]+\s+)*[^\s]*(\/tmp\/|\.log\b|\.tmp\b)/i],
       ["清理", "进程", /\b(kill|pkill|killall)\b/i],
-      ["编码", "编辑", /\b(sed -i|tee |cat >|cat >>|patch |git apply)\b/i],
+      ["编码", "编辑", /(\bsed -i\b|\bcat >>?\s|\btee\s|\bpatch\s|\bgit apply\b)/i],
+      ["编码", "git", /\bgit\s+(status|diff|log|show|add|commit|branch|remote|fetch|stash list)\b/i],
+      ["编码", "搜索", /\b(rg|ag|ack|grep|find)\b/i],
+      ["编码", "看文件", /\b(cat|head|tail|less|more|wc|nl|file|stat|tree)\b/i],
+      ["编码", "脚本", /\b(node|deno|tsx|ts-node|python3?|bash|sh|zsh|ruby|perl|npx)\b/i],
+      ["编码", "目录", /\b(cd|pwd|ls|mkdir|rmdir|du|df|dirname|basename)\b/i],
     ];
 
     const ROW_ORDER = ["模型", "编码", "构建", "测试", "清理"];
     const MAX_SUBS = 3;
+    const SUB_LIMIT = { 编码: 6 };
     const MIN_ROW_MS = 1000;
     const EMPTY_REPORT = new Map();
 
@@ -81,7 +87,7 @@ window.__ModuleLoader__.load({
         if (pattern.test(text)) return [category, sub];
       }
       if (name === "edit" || name === "write" || name === "notebook_edit") return ["编码", "编辑"];
-      if (name === "read") return ["编码", "读代码"];
+      if (name === "read") return ["编码", "看文件"];
       if (name === "grep" || name === "glob") return ["编码", "搜索"];
       return ["编码", "其他命令"];
     }
@@ -271,7 +277,7 @@ window.__ModuleLoader__.load({
         const subs = [...bucket.subs.entries()]
           .filter(([, ms]) => ms >= MIN_ROW_MS)
           .sort((a, b) => b[1] - a[1])
-          .slice(0, MAX_SUBS);
+          .slice(0, SUB_LIMIT[name] || MAX_SUBS);
         rows.push({ name, ms: bucket.ms, subs });
       }
       return rows;
@@ -557,11 +563,11 @@ window.__ModuleLoader__.load({
       ".dsh-tt-sep{padding:0 6px;opacity:.3}",
       ".dsh-tt-verdict{font-size:11px;opacity:.85}",
       ".dsh-tt-caret{opacity:.4;font-size:9px;line-height:1}",
-      ".dsh-tt-body{display:grid;grid-template-columns:3.1em 4.4em 44px minmax(0,1fr);align-items:center;column-gap:10px;row-gap:6px;padding:10px 12px;border-radius:8px;border:1px solid var(--dsw-alias-border-l1,rgba(127,127,127,.14));background:var(--dsw-alias-bg-layer-1,rgba(127,127,127,.05))}",
+      ".dsh-tt-body{display:grid;grid-template-columns:3.1em 4.4em 44px minmax(0,1fr);align-items:start;column-gap:10px;row-gap:6px;padding:10px 12px;border-radius:8px;border:1px solid var(--dsw-alias-border-l1,rgba(127,127,127,.14));background:var(--dsw-alias-bg-layer-1,rgba(127,127,127,.05))}",
       ".dsh-tt-name{display:flex;align-items:center;font-size:11.5px;white-space:nowrap}",
       ".dsh-tt-ms{text-align:right;font-weight:500;color:var(--dsw-alias-label-secondary,#6b7280)}",
       ".dsh-tt-body .dsh-tt-bar{width:44px;height:3px;opacity:1;background:var(--dsw-alias-border-l1,rgba(127,127,127,.1))}",
-      ".dsh-tt-sub{min-width:0;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;font-size:11px;opacity:.85}",
+      ".dsh-tt-sub{min-width:0;white-space:normal;word-break:keep-all;font-size:11px;line-height:17px;opacity:.85}",
       ".dsh-tt-note{grid-column:1/-1;padding-top:2px;font-size:10.5px;opacity:.45}",
       ".dsh-tt-muted{opacity:.5}",
       ".dsh-tt-hint{opacity:.6;font-size:11px}",

@@ -68,13 +68,14 @@ Click to expand sub-categories (each with a share bar):
 
 ```
   模型    1m50s   ███████░░░░   first token 1m20s · thinking 25s · output 5s
-  编码      12s   █░░░░░░░░░░   edit 8s · other 4s
+  编码      42s   █░░░░░░░░░░   view 21s · edit 12s · search 6s · script 2s
+                                · dir 1s
   构建      20s   █░░░░░░░░░░   build 14s · lint 6s
   测试      16s   █░░░░░░░░░░   vision 11s* · browser 5s
 ```
 
 - Fixed order: **model → coding → build → test → cleanup**; a category with no data is omitted.
-- Segments under 1s are hidden; at most 3 sub-categories, longest first.
+- Segments under 1s are hidden. Coding lists up to 6 sub-categories, other rows up to 3, longest first; they wrap when needed.
 - `*` marks vision, which overlaps the model row — see below.
 - Only model and tool time is counted. Waiting for the user or for approval is excluded.
 
@@ -115,9 +116,12 @@ First match wins. Edit the `RULES` array at the top of `client.js` to change it.
 | 6 | cleanup / restore | `git checkout --`, `git restore`, `make clean` |
 | 7 | cleanup / temp files | `rm … /tmp/…`, `rm … *.log` |
 | 8 | cleanup / processes | `kill`, `pkill`, `killall` |
-| 9 | coding / edit | `sed -i`, `cat > file`, `edit` / `write` tools |
-| 10 | coding / read | `read` tool |
-| 11 | coding / search | `grep` / `glob` tools |
+| 9 | coding / edit | `sed -i`, `cat > file`, `tee`, `git apply`, `edit` / `write` tools |
+| 10 | coding / git | `git status / diff / log / add / commit / branch / remote` |
+| 11 | coding / search | `rg`, `grep`, `find`, `grep` / `glob` tools |
+| 12 | coding / view | `cat`, `head`, `tail`, `wc`, `tree`, `read` tool |
+| 13 | coding / script | `node`, `python3`, `bash`, `tsx`, `npx` |
+| 14 | coding / dir | `cd`, `pwd`, `ls`, `mkdir`, `du` |
 
 **Deliberately excluded**: waiting for the user, waiting for approval. Neither is
 model time nor tool time; mixing them in would distort the "what is slow" answer.

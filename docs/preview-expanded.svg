@@ -1,16 +1,12 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="760" height="212" viewBox="0 0 760 212" role="img" aria-label="展开后的小分类">
+<svg xmlns="http://www.w3.org/2000/svg" width="760" height="264" viewBox="0 0 760 264" role="img" aria-label="展开后的小分类">
   <defs>
     <style>
       .card { fill: #1e1f23; stroke: #2c2e33; }
       .panel { fill: #232428; stroke: #2f3137; }
       .mono { font-family: -apple-system, "SF Pro Text", "PingFang SC", "Microsoft YaHei", sans-serif; font-variant-numeric: tabular-nums; }
-      .muted { fill: #8a8f98; }
-      .strong { fill: #c9cdd4; }
-      .dim { fill: #6b7280; }
     </style>
   </defs>
-  <rect class="card" x="0.5" y="0.5" width="759" height="211" rx="10"/>
-
+  <rect class="card" x="0.5" y="0.5" width="759" height="263" rx="10"/>
   <text x="18" y="32" class="mono" font-size="16" fill="#8a8f98">◷</text>
   <text x="39" y="31" class="mono" font-size="12">
     <tspan font-size="11" fill="#8a8f98" opacity="0.65">耗时</tspan>
@@ -20,7 +16,7 @@
     <tspan dx="5" fill="#8a8f98">模型</tspan><tspan dx="4" fill="#c9cdd4" font-weight="500">1m50s</tspan>
     <tspan dx="8" fill="#6b7280" opacity="0.4">·</tspan>
     <tspan dx="6" font-size="8" fill="#4aa87a">●</tspan>
-    <tspan dx="5" fill="#8a8f98">编码</tspan><tspan dx="4" fill="#c9cdd4" font-weight="500">12s</tspan>
+    <tspan dx="5" fill="#8a8f98">编码</tspan><tspan dx="4" fill="#c9cdd4" font-weight="500">42s</tspan>
     <tspan dx="8" fill="#6b7280" opacity="0.4">·</tspan>
     <tspan dx="6" font-size="8" fill="#c68a4a">●</tspan>
     <tspan dx="5" fill="#8a8f98">构建</tspan><tspan dx="4" fill="#c9cdd4" font-weight="500">20s</tspan>
@@ -31,37 +27,37 @@
     <tspan dx="10" font-size="11" fill="#8a8f98" opacity="0.85">慢在模型（等首字）</tspan>
   </text>
   <text x="700" y="31" class="mono" font-size="9" fill="#6b7280" opacity="0.5">▴</text>
+  <rect class="panel" x="1" y="46" width="758" height="206" rx="8"/>
 
-  <rect class="panel" x="1" y="46" width="758" height="154" rx="8"/>
-
-  <circle cx="26" cy="70" r="2.5" fill="#5b74e0" opacity="0.9"/>
-  <text x="34" y="74" class="mono" font-size="11.5" fill="#8a8f98">模型</text>
+  <text x="26" y="74" class="mono" font-size="8" fill="#5b74e0">●</text>
+  <text x="40" y="74" class="mono" font-size="11.5" fill="#8a8f98">模型</text>
   <text x="132" y="74" class="mono" font-size="12" fill="#c9cdd4" font-weight="500" text-anchor="end">1m50s</text>
   <rect x="142" y="69" width="44" height="3" rx="1.5" fill="#2c2e33"/>
   <rect x="142" y="69" width="30.6" height="3" rx="1.5" fill="#5b74e0"/>
   <text x="198" y="74" class="mono" font-size="11" fill="#8a8f98" opacity="0.85">等首字 1m20s · 思考 25s · 输出 5s</text>
 
-  <circle cx="26" cy="94" r="2.5" fill="#4aa87a" opacity="0.9"/>
-  <text x="34" y="98" class="mono" font-size="11.5" fill="#8a8f98">编码</text>
-  <text x="132" y="98" class="mono" font-size="12" fill="#c9cdd4" font-weight="500" text-anchor="end">12s</text>
+  <text x="26" y="98" class="mono" font-size="8" fill="#4aa87a">●</text>
+  <text x="40" y="98" class="mono" font-size="11.5" fill="#8a8f98">编码</text>
+  <text x="132" y="98" class="mono" font-size="12" fill="#c9cdd4" font-weight="500" text-anchor="end">42s</text>
   <rect x="142" y="93" width="44" height="3" rx="1.5" fill="#2c2e33"/>
-  <rect x="142" y="93" width="3.3" height="3" rx="1.5" fill="#4aa87a"/>
-  <text x="198" y="98" class="mono" font-size="11" fill="#8a8f98" opacity="0.85">编辑 8s · 其他命令 4s</text>
+  <rect x="142" y="93" width="11.7" height="3" rx="1.5" fill="#4aa87a"/>
+  <text x="198" y="98" class="mono" font-size="11" fill="#8a8f98" opacity="0.85">看文件 21s · 编辑 12s · 搜索 6s · 脚本 2s</text>
+  <text x="198" y="115" class="mono" font-size="11" fill="#8a8f98" opacity="0.85">· 目录 1s</text>
 
-  <circle cx="26" cy="118" r="2.5" fill="#c68a4a" opacity="0.9"/>
-  <text x="34" y="122" class="mono" font-size="11.5" fill="#8a8f98">构建</text>
-  <text x="132" y="122" class="mono" font-size="12" fill="#c9cdd4" font-weight="500" text-anchor="end">20s</text>
-  <rect x="142" y="117" width="44" height="3" rx="1.5" fill="#2c2e33"/>
-  <rect x="142" y="117" width="5.6" height="3" rx="1.5" fill="#c68a4a"/>
-  <text x="198" y="122" class="mono" font-size="11" fill="#8a8f98" opacity="0.85">构建 14s · 静态检查 6s</text>
+  <text x="26" y="140" class="mono" font-size="8" fill="#c68a4a">●</text>
+  <text x="40" y="140" class="mono" font-size="11.5" fill="#8a8f98">构建</text>
+  <text x="132" y="140" class="mono" font-size="12" fill="#c9cdd4" font-weight="500" text-anchor="end">20s</text>
+  <rect x="142" y="135" width="44" height="3" rx="1.5" fill="#2c2e33"/>
+  <rect x="142" y="135" width="5.6" height="3" rx="1.5" fill="#c68a4a"/>
+  <text x="198" y="140" class="mono" font-size="11" fill="#8a8f98" opacity="0.85">构建 14s · 静态检查 6s</text>
 
-  <circle cx="26" cy="142" r="2.5" fill="#bf6577" opacity="0.9"/>
-  <text x="34" y="146" class="mono" font-size="11.5" fill="#8a8f98">测试</text>
-  <text x="132" y="146" class="mono" font-size="12" fill="#c9cdd4" font-weight="500" text-anchor="end">16s</text>
-  <rect x="142" y="141" width="44" height="3" rx="1.5" fill="#2c2e33"/>
-  <rect x="142" y="141" width="4.5" height="3" rx="1.5" fill="#bf6577"/>
-  <text x="198" y="146" class="mono" font-size="11" fill="#8a8f98" opacity="0.85">识图 11s* · 浏览器 5s</text>
+  <text x="26" y="164" class="mono" font-size="8" fill="#bf6577">●</text>
+  <text x="40" y="164" class="mono" font-size="11.5" fill="#8a8f98">测试</text>
+  <text x="132" y="164" class="mono" font-size="12" fill="#c9cdd4" font-weight="500" text-anchor="end">16s</text>
+  <rect x="142" y="159" width="44" height="3" rx="1.5" fill="#2c2e33"/>
+  <rect x="142" y="159" width="4.5" height="3" rx="1.5" fill="#bf6577"/>
+  <text x="198" y="164" class="mono" font-size="11" fill="#8a8f98" opacity="0.85">识图 11s* · 浏览器 5s</text>
 
-  <text x="34" y="180" class="mono" font-size="10.5" fill="#565a61">* 识图含模型读图时间（与「模型」重叠）</text>
-  <text x="34" y="194" class="mono" font-size="10.5" fill="#565a61">低于 1 秒的分段不显示，小分类最多 3 个</text>
+  <text x="34" y="200" class="mono" font-size="10.5" fill="#565a61">编码最多列 6 个小分类，其余最多 3 个；低于 1 秒的不显示</text>
+  <text x="34" y="218" class="mono" font-size="10.5" fill="#565a61">* 识图含模型读图时间（与「模型」重叠）</text>
 </svg>

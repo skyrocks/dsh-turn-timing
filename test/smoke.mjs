@@ -102,12 +102,19 @@ const cases = [
   ['{"command":"rm -rf /tmp/build.log"}', ["清理", "临时文件"]],
   ['{"command":"pkill -f vite"}', ["清理", "进程"]],
   ['{"command":"git checkout -- src/a.ts"}', ["清理", "还原"]],
-  ['{"command":"cat package.json | grep test"}', ["编码", "其他命令"]],
+  ['{"command":"cat package.json | grep test"}', ["编码", "搜索"]],
+  ['{"command":"cat > /tmp/x.py"}', ["编码", "编辑"]],
+  ['{"command":"cd /repo && ls -la"}', ["编码", "目录"]],
+  ['{"command":"git status --short"}', ["编码", "git"]],
+  ['{"command":"node scripts/check.mjs"}', ["编码", "脚本"]],
+  ['{"command":"head -20 src/index.ts"}', ["编码", "看文件"]],
+  ['{"command":"python3 -c import os"}', ["编码", "脚本"]],
 ];
 for (const [args, expected] of cases) {
   assert.deepEqual(classify("bash", args), expected, `归类错误：${args}`);
 }
 assert.deepEqual(classify("edit", "{}"), ["编码", "编辑"]);
+assert.deepEqual(classify("read", '{"file_path":"/a.ts"}'), ["编码", "看文件"]);
 assert.deepEqual(classify("read_image", "{}"), ["测试", "识图"]);
 
 // ── 格式化 ───────────────────────────────────────────────────
