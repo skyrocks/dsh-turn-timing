@@ -36,11 +36,11 @@
   <rect x="142" y="69" width="30.6" height="3" rx="1.5" fill="#5b74e0"/>
   <text x="198" y="74" class="mono" font-size="11" fill="#8a8f98" opacity="0.85">等首字 1m20s · 思考 25s · 输出 5s</text>
 
-  <text x="26" y="98" class="mono" font-size="8" fill="#4aa87a">●</text>
-  <text x="40" y="98" class="mono" font-size="11.5" fill="#8a8f98">编码</text>
-  <text x="132" y="98" class="mono" font-size="12" fill="#c9cdd4" font-weight="500" text-anchor="end">42s</text>
-  <rect x="142" y="93" width="44" height="3" rx="1.5" fill="#2c2e33"/>
-  <rect x="142" y="93" width="11.7" height="3" rx="1.5" fill="#4aa87a"/>
+  <text x="26" y="106" class="mono" font-size="8" fill="#4aa87a">●</text>
+  <text x="40" y="106" class="mono" font-size="11.5" fill="#8a8f98">编码</text>
+  <text x="132" y="106" class="mono" font-size="12" fill="#c9cdd4" font-weight="500" text-anchor="end">42s</text>
+  <rect x="142" y="101" width="44" height="3" rx="1.5" fill="#2c2e33"/>
+  <rect x="142" y="101" width="11.7" height="3" rx="1.5" fill="#4aa87a"/>
   <text x="198" y="98" class="mono" font-size="11" fill="#8a8f98" opacity="0.85">看文件 21s · 编辑 12s · 搜索 6s · 脚本 2s</text>
   <text x="198" y="115" class="mono" font-size="11" fill="#8a8f98" opacity="0.85">· 目录 1s</text>
 
