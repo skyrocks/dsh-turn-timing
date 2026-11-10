@@ -1,0 +1,29 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="760" height="52" viewBox="0 0 760 52" role="img" aria-label="每轮末尾的耗时摘要">
+  <defs>
+    <style>
+      .card { fill: #1e1f23; stroke: #2c2e33; }
+      .mono { font-family: -apple-system, "SF Pro Text", "PingFang SC", "Microsoft YaHei", sans-serif; font-variant-numeric: tabular-nums; }
+    </style>
+  </defs>
+  <rect class="card" x="0.5" y="0.5" width="759" height="51" rx="10"/>
+  <text x="18" y="32" class="mono" font-size="16" fill="#8a8f98">◷</text>
+  <text x="39" y="31" class="mono" font-size="12">
+    <tspan font-size="11" fill="#8a8f98" opacity="0.65">耗时</tspan>
+    <tspan dx="4" font-size="13" font-weight="600" fill="#c9cdd4">2m38s</tspan>
+    <tspan dx="10" fill="#6b7280" opacity="0.22">|</tspan>
+    <tspan dx="10" font-size="8" fill="#5b74e0">●</tspan>
+    <tspan dx="5" fill="#8a8f98">模型</tspan><tspan dx="4" fill="#c9cdd4" font-weight="500">1m50s</tspan>
+    <tspan dx="8" fill="#6b7280" opacity="0.4">·</tspan>
+    <tspan dx="6" font-size="8" fill="#4aa87a">●</tspan>
+    <tspan dx="5" fill="#8a8f98">编码</tspan><tspan dx="4" fill="#c9cdd4" font-weight="500">12s</tspan>
+    <tspan dx="8" fill="#6b7280" opacity="0.4">·</tspan>
+    <tspan dx="6" font-size="8" fill="#c68a4a">●</tspan>
+    <tspan dx="5" fill="#8a8f98">构建</tspan><tspan dx="4" fill="#c9cdd4" font-weight="500">20s</tspan>
+    <tspan dx="8" fill="#6b7280" opacity="0.4">·</tspan>
+    <tspan dx="6" font-size="8" fill="#bf6577">●</tspan>
+    <tspan dx="5" fill="#8a8f98">测试</tspan><tspan dx="4" fill="#c9cdd4" font-weight="500">16s</tspan>
+    <tspan dx="10" fill="#6b7280" opacity="0.22">|</tspan>
+    <tspan dx="10" font-size="11" fill="#8a8f98" opacity="0.85">慢在模型（等首字）</tspan>
+  </text>
+  <text x="700" y="31" class="mono" font-size="9" fill="#6b7280" opacity="0.5">▾</text>
+</svg>
