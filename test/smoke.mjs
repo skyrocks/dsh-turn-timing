@@ -20,7 +20,7 @@ const mod = captured.factory((name) => {
   if (name === "react") return ReactStub;
   throw new Error(`unexpected require: ${name}`);
 });
-const { analyze, classify, format, turnNumberOf } = mod.__internals;
+const { analyze, classify, format, turnNumberOf, rowsOf, CSS } = mod.__internals;
 
 const event = (type, time, data = {}) => ({ type, time, data });
 const chunk = (type, time, extra = {}) => ({ type: "chunk", time, chunk: { type, ...extra } });
@@ -139,4 +139,30 @@ assert.equal(turnNumberOf(3), 3);
 assert.equal(turnNumberOf("4"), undefined, "字符串不猜");
 assert.equal(turnNumberOf(undefined), undefined);
 
-console.log("smoke: 9 组归类 + 轮次折叠 + 模型三段 + 识图归属 + FIFO 配对 全部通过");
+// ── 样式回归：这几个值改坏了，界面会立刻变形 ───────────────────
+const cssChecks = [
+  [".dsh-tt-body{", "align-items:center", "详情行必须垂直居中（占比条才会居中）"],
+  [".dsh-tt-body{", "grid-template-columns:3.1em 4.4em 44px minmax(0,1fr)", "详情面板的四列网格"],
+  [".dsh-tt-bar{", "height:3px", "占比条高度"],
+  [".dsh-tt-clock{", "font-size:16px", "时钟图标字号"],
+  [".dsh-tt-sub{", "white-space:normal", "小分类多时要能换行"],
+];
+for (const [selector, needle, label] of cssChecks) {
+  const start = CSS.indexOf(selector);
+  assert.ok(start >= 0, `缺少选择器 ${selector}`);
+  const end = CSS.indexOf("}", start);
+  assert.ok(CSS.slice(start, end).includes(needle), `${label}：${selector} 里找不到 ${needle}`);
+}
+
+// ── 小分类上限：编码 6 个，其余 3 个 ──────────────────────────
+const many = (n) => new Map(Array.from({ length: n }, (_, i) => [`s${i}`, 5000 - i]));
+const capped = rowsOf({
+  buckets: new Map([
+    ["编码", { ms: 90000, subs: many(8) }],
+    ["模型", { ms: 90000, subs: many(8) }],
+  ]),
+});
+assert.equal(capped.find((r) => r.name === "编码").subs.length, 6, "编码最多 6 个小分类");
+assert.equal(capped.find((r) => r.name === "模型").subs.length, 3, "其余分类最多 3 个小分类");
+
+console.log("smoke: 9 组归类 + 轮次折叠 + 模型三段 + 识图归属 + FIFO 配对 + 样式与小分类上限 全部通过");

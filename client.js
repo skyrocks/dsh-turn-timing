@@ -605,7 +605,7 @@ window.__ModuleLoader__.load({
 
     exports.apply = apply;
     exports.inject = ["slots", "sessions"];
-    exports.__internals = { analyze, classify, format, rowsOf, verdictOf, turnNumberOf };
+    exports.__internals = { analyze, classify, format, rowsOf, verdictOf, turnNumberOf, CSS };
     return module.exports;
   },
 });
