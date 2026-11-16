@@ -12,6 +12,7 @@ and no extra model call.
 ![dsh](https://img.shields.io/badge/DSH-0.2.1--rc.2%20line-4d6bfe)
 ![node](https://img.shields.io/badge/node-%3E%3D18-339933)
 ![dependencies](https://img.shields.io/badge/runtime%20deps-0-6bd586)
+[![CI](https://github.com/skyrocks/dsh-turn-timing/actions/workflows/ci.yml/badge.svg)](https://github.com/skyrocks/dsh-turn-timing/actions/workflows/ci.yml)
 
 <p align="center">
   <img src="docs/preview-collapsed.png" alt="Per-turn timing summary" width="720">
