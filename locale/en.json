@@ -1,0 +1,6 @@
+{
+  "meta": {
+    "title": "Turn timing",
+    "description": "Shows where each turn's time went — model, coding, build, test, cleanup — with expandable sub-categories."
+  }
+}

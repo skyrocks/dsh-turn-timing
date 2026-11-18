@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" width="64" height="64" role="img" aria-label="Turn timing">
+  <defs>
+    <linearGradient id="g" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#5b8def"/>
+      <stop offset="1" stop-color="#2f5fb8"/>
+    </linearGradient>
+    <linearGradient id="l" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#9dbcf8"/>
+      <stop offset="1" stop-color="#6f97e8"/>
+    </linearGradient>
+  </defs>
+  <!-- 秒表 -->
+  <circle cx="32" cy="36" r="19" fill="url(#g)"/>
+  <circle cx="32" cy="36" r="19" fill="none" stroke="url(#l)" stroke-width="6"/>
+  <path d="M28 11h8M32 11v6" stroke="#2f5fb8" stroke-width="3.5" stroke-linecap="round"/>
+  <path d="M32 36V25M32 36l9 7" stroke="#fff" stroke-width="3.5" stroke-linecap="round"/>
+</svg>

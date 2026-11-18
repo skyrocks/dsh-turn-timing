@@ -1,6 +1,6 @@
 {
   "name": "@skyrocks/dsh-turn-timing",
-  "version": "0.1.11",
+  "version": "0.1.12",
   "description": "DeepSeek Harness plugin: 每轮对话结束时直接显示耗时去向（模型 / 编码 / 构建 / 测试 / 清理）",
   "license": "MIT",
   "type": "module",
@@ -8,6 +8,8 @@
   "exports": {
     ".": "./index.js",
     "./client": "./client.js",
+    "./locale/*.json": "./locale/*.json",
+    "./icon": "./icon.svg",
     "./package.json": "./package.json"
   },
   "files": [
@@ -19,7 +21,8 @@
     "CHANGELOG.md",
     "LICENSE",
     "docs",
-    "test"
+    "icon.svg",
+    "locale/*.json"
   ],
   "engines": {
     "node": ">=18",
